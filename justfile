@@ -1,5 +1,5 @@
 # Setup the project
-build:
+setup:
     npm install
 
 # Build the project
