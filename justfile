@@ -1,3 +1,7 @@
+# Setup the project
+build:
+    npm install
+
 # Build the project
 build:
     npm run compile
