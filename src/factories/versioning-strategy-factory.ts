@@ -21,6 +21,7 @@ import {ServicePackVersioningStrategy} from '../versioning-strategies/service-pa
 import {GitHub} from '../github';
 import {ConfigurationError} from '../errors';
 import {PrereleaseVersioningStrategy} from '../versioning-strategies/prerelease';
+import {SourceCustomVersioningStrategy} from '../versioning-strategies/source-custom';
 
 export type VersioningStrategyType = string;
 
@@ -44,6 +45,7 @@ const versioningTypes: Record<string, VersioningStrategyBuilder> = {
   'always-bump-major': options => new AlwaysBumpMajor(options),
   'service-pack': options => new ServicePackVersioningStrategy(options),
   prerelease: options => new PrereleaseVersioningStrategy(options),
+  'source-custom': options => new SourceCustomVersioningStrategy(options),
 };
 
 export function buildVersioningStrategy(
